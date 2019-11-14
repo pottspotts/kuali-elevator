@@ -8,9 +8,11 @@ const numFloors           = 10;
 function simulator(){
   let Control =  new ElevatorController(numElevators,numFloors);
   setInterval(() =>{
-
+    // some simulation logic here...
   }, 1000);
 
+  var randomFloor = Math.round(Math.random() * numFloors)
+  Control.call(randomFloor)
 }
 
 function App() {
