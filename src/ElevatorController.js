@@ -2,25 +2,15 @@ import React, { Component } from 'react'
 
 class ElevatorController extends Component {
 
-    componentDidMount() {
-        this.buildingElevators   = [];
-        this.Elevator = {
-            currentFloor:     0,
-            targetFloor:      0,
-            doorOpen:         false,
-            history:          [],
-            tripCount:        0,
-            floorCount:       0,
-        };
-    }
+  constructor(props) {
+    super(props)
+    this.elevators   = [...Array(this.numElevators).keys()];
+    console.log(this.elevators);
+  }
 
-    initialize(numElevators,numFloors) {
-
-    }
-
-    render(){
-        return true
-    }
+  render(){
+    return true
+  }
 
 }
 

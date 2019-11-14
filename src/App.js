@@ -7,7 +7,9 @@ const numFloors           = 10;
 
 function simulator(){
   let Control =  new ElevatorController(numElevators,numFloors);
-  let elevators = [...Array(numElevators).keys()];
+  setInterval(() =>{
+
+  }, 1000);
 
 }
 
