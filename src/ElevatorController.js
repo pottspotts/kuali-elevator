@@ -1,10 +1,12 @@
-import React, { Component } from 'react'
+import Elevator from "./Elevator";
 
-class ElevatorController extends Component {
+class ElevatorController {
 
-  constructor(props) {
-    super(props)
-    this.elevators   = [...Array(this.numElevators).keys()];
+  constructor(numElevators,numFloors) {
+    this.elevators = []
+    for(var i=0;i<numElevators;i++){
+      this.elevators.push(new Elevator(i))
+    }
     console.log(this.elevators);
   }
 
