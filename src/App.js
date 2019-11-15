@@ -2,8 +2,8 @@ import React from 'react';
 import ElevatorController from './ElevatorController'
 import './App.css';
 
-const numElevators        = 3;
-const numFloors           = 10;
+const numElevators        = 5;
+const numFloors           = 100;
 
 function simulator(){
   let Control =  new ElevatorController(numElevators,numFloors);

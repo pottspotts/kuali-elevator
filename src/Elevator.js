@@ -1,7 +1,7 @@
 class Elevator {
   constructor(id) {
     this.id =               id;
-    this.currentFloor =     0;
+    this.currentFloor =     Math.round(Math.random() * 100);
     this.targetFloor =      0;
     this.doorOpen =         false;
     this.history =          [];
@@ -21,7 +21,7 @@ class Elevator {
   move(targetFloor, numFloors) {
     if(
         ! this.doorOpen // don't move if door is closed
-        && this.currentFloor != this.targetFloor // don't move if we're there already
+        && this.currentFloor !== this.targetFloor // don't move if we're there already
         && this.targetFloor < numFloors -1 // don't go through the roof
         && this.targetFloor > 0 // don't move below floor 1
     ){

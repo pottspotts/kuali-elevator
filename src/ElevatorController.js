@@ -15,17 +15,23 @@ class ElevatorController {
     console.log('NEW CALL for floor '+floor+'.')
     var counts = []
     for(var i=0;i<this.elevators.length;i++){
-      console.log(this.elevators[i].currentFloor)
       counts.unshift(this.elevators[i].currentFloor)
     }
+
+    // Find the closest elevator by floor number
     var closest = counts.reduce(function(prev, curr) {
       return (Math.abs(curr - floor) < Math.abs(prev - floor) ? curr : prev);
     });
-    console.log(closest)
-    const found = counts.find(x => x > closest);
 
-    console.log("END CALL()")
-    console.log(this.elevators)
+    // Find the associated Elevator object by the index of the closest array
+    var closestIdx = undefined
+    for(var i=0;i<counts.length;i++){
+      if(counts[i] === closest) {
+        closestIdx = i
+      }
+    }
+    console.log("SENDING elevator #%d to floor #%d",closestIdx,floor)
+    this.elevators[closestIdx].currentFloor =
   }
 
 }
