@@ -3,6 +3,7 @@ class Elevator {
     this.id =               id;
     this.currentFloor =     Math.round(Math.random() * 100);
     this.targetFloor =      0;
+    this.isOccupied =       false;
     this.doorOpen =         false;
     this.history =          [];
     this.tripCount =        0;

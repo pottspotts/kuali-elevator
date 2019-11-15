@@ -23,7 +23,7 @@ class ElevatorController {
       return (Math.abs(curr - floor) < Math.abs(prev - floor) ? curr : prev);
     });
 
-    // Find the associated Elevator object by the index of the closest array
+    // Find the associated Elevator object by the index of the 'closest' array
     var closestIdx = undefined
     for(var i=0;i<counts.length;i++){
       if(counts[i] === closest) {
@@ -31,7 +31,8 @@ class ElevatorController {
       }
     }
     console.log("SENDING elevator #%d to floor #%d",closestIdx,floor)
-    this.elevators[closestIdx].currentFloor =
+    this.elevators[closestIdx].targetFloor = floor
+    console.log(this.elevators)
   }
 
 }
